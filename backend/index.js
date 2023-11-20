@@ -7,7 +7,6 @@ import authRoutes from "./routes/authRoutes.js";
 
 
 const app = express();
-const router = express.Router();
 
 dotenv.config();
 app.use(cors());
@@ -19,11 +18,13 @@ db.on('connected', () => {
     console.log('Connecté à la base de données MongoDB');
 });
 
-router.use('/api/auth', authRoutes);
-// router.use('/api/users', userRoutes);
-// router.use('/api/articles', articleRoutes);
 
-const port = process.env.PORT || 3000;
+app.use('/api/auth', authRoutes);
+// app.use('/api/user', userRoutes);
+// app.use('/api/post', postRoutes);
+
+
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(`Serveur lancé sur le port ${port}`);
