@@ -1,7 +1,8 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
-import { expressjwt } from "express-jwt";
 import { comparePassword, hashPassword } from '../utils/Auth.js';
+import dotenv from "dotenv";
+dotenv.config();
 
 export const signup = async(req, res) => {
 try {
@@ -49,16 +50,18 @@ export const login = async(req, res) => {
         }
         //check password
         const match = await comparePassword(password, user.password);
+
         //create signed jwt
         const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET, {expiresIn: "7d"});
+
         //return user and token to client, exclude hashed password
         user.password = undefined;
-        //send token in cookie
+
+        //send token in cookies
         res.cookie("token", token, {
             httpOnly: true,
             // secure: true, //only works on https
         });
-        //send user as json response
         res.json(user);
     } catch (error) {
         console.log(error);
@@ -69,14 +72,14 @@ export const login = async(req, res) => {
 
 
 
-// export const logout = async(req, res) => {
-//     try {
-//         res.clearCookie("token");
-//         return res.json({message: "Signout success"});
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+export const logout = async(req, res) => {
+    try {
+        res.clearCookie("token");
+        return res.json({message: "Signout success"});
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 

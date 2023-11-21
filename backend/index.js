@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 
 const app = express();
@@ -20,7 +21,7 @@ db.on('connected', () => {
 
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/user', userRoutes);
+app.use('/api/user', userRoutes);
 // app.use('/api/post', postRoutes);
 
 
