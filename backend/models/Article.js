@@ -1,8 +1,15 @@
 import mongoose from "mongoose";
 
 const articleSchema = new mongoose.Schema({
-    title: String,
-    content: String,
+    title: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    content: {
+        type: String,
+        required: true,
+    },
 });
 
 const Article = mongoose.model('Article', articleSchema);
