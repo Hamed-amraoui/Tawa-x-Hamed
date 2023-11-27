@@ -28,3 +28,23 @@ Description brève de votre projet.
 1. Cloner le projet
    ```bash
    git clone https://github.com/Hamed-amraoui/Tawa-x-Hamed
+
+2. Installation des dépendances
+   ```bash
+   cd frontend && cd backend
+   npm install
+
+
+## Configuration
+1. **Configuration du Back-end :**
+   - Créer un fichier .env à la racine du dossier du serveur avec les détails de la base de données.
+2. **Configuration du Front-end :**
+   - Assurez-vous de configurer les points de terminaison de l'API dans le code du front-end.
+
+## Exécution
+1. Exécution du Back-end
+   ```bash
+      npm run server
+2. Exécution du Front-end
+   ```bash
+      npm run dev
