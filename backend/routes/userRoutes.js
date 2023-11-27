@@ -5,7 +5,7 @@ import { requireSignin } from "../middlewares/index.js";
 
 const router = express.Router();
 
-router.get('/details', requireSignin, currentUser);
+router.get('/profile', requireSignin, currentUser);
 router.post('/update', updateInfo);
 
 
