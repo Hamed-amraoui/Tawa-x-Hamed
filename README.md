@@ -1,10 +1,13 @@
 # Tawa-x-Hamed
 
-Description brève de votre projet.
+Un formulaire d'inscription permettant aux utilisateurs de créer un compte avec une validation des champs appropriée.
+Un système d'authentification qui permet aux utilisateurs de se connecter à leur compte.
+Un tableau de bord pour afficher les informations du compte de l'utilisateur.
+Une fonctionnalité permettant aux utilisateurs de créer, mettre à jour et supprimer des articles (titre, contenu, etc.).
 
 ## Technologies Utilisées
 
-- Front-end : ReactJS/Vue3
+- Front-end : ReactJS
 - Back-end : Node.js, Express
 - Base de données : MongoDB
 
